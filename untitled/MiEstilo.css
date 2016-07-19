@@ -1,0 +1,143 @@
+/* ESTILOS DEL HTML  */
+html{
+    /*background-color: darkkhaki;*/
+    font-family: "Century Gothic";
+}
+body{
+    background-size: cover;
+}
+head{
+    text-align: justify;
+}
+h1{
+    color:darkslateblue;
+
+    text-align: center;
+    /* background-color: darkkhaki;*/
+    font-size:50px
+}
+
+/* ESTILOS SOBRE LOS ESTILOS */
+.wrap {
+    margin: 20px;
+    padding: 20px;
+    padding-right: 240px;
+}
+.main{
+    margin: 0 -220px 0 auto;
+    width: 100%;
+    /*float: right;*/
+    font-size:20px
+}
+.izquierda {
+    width: 200px;
+    float: left;
+    height: 200px;
+    padding-left: 5px;
+    border: groove darkolivegreen;
+    border-radius: 20px;
+}
+.resultado{
+    margin: 20px;
+    padding: 20px;
+    text-align:center;
+    padding-right: 5px;
+    padding-left: 5px;
+    display: none;
+
+}
+.solucion{
+    margin: 0 40% 0 auto;
+    padding: 20px;
+    width: 100%;
+    font-size:20px;
+    padding-left: 50px;
+}
+.datos{
+    width: 35%;
+    float: left;
+    padding-left: 5px;
+    font-size:20px;
+    margin: auto;
+
+    }
+
+.imagenes
+{
+    text-align: center;
+}
+.opcion{
+    text-align: center;
+    -webkit-padding-start:5px;
+    -webkit-padding-end: 5px;
+    margin-left: auto;
+
+}
+.botones{
+    text-align: left;
+    padding: 5px;
+}
+.canvas{
+	margin: 0 -478px 0 auto;
+    width: 100%;
+    float: right;
+    font-size:20px
+	
+}
+
+/* ESTILO DE LOS ID*/
+#caja {
+    width: 100%;
+    margin: auto;
+    height: 0px;
+    /* background: rgba(255, 175, 24, 1);*/
+    box-shadow: 10px 10px 3px #D8D8D8;
+    transition: height .4s;
+}
+
+#boton{
+    padding: 10px;
+    background: beige;
+    width: 200px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0px 0px 1px #000;
+    display: inline-block;
+}
+
+#boton:hover{
+    opacity: .8;
+}
+#boton1{
+    padding: 10px;
+    background: none;
+    width: 200px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0px 0px 1px #000;
+    display: block;
+}
+#Caja1{
+    width: 100%;
+    margin: 0 -220px  0 auto;
+    height: 0px;
+    /* background: rgba(255, 175, 24, 1);*/
+    box-shadow: 10px 10px 3px #D8D8D8;
+    transition: height .4s;
+    padding-left: 50px;
+
+}
+#boton2{
+    padding: 10px;
+    background: none;
+    width: 200px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0px 0px 1px #000;
+    display: block;
+}
+
+

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="MiEstilo.css" type="text/css">
+    <script type="text/javascript" src="MiJava.js"></script>
+
+    <title> Ejercicios de Fisica</title>
+
+</head>
+
+<body background="images/fondo.jpg">
+
+    <H1> FISICA II: Energia</H1>
+
+
+    <div class="wrap">
+        <div class="izquierda">
+
+            <h3>objetivos:</h3>
+            <ol>
+                <li>aprender a resolver problemas por energia</li>
+                <li>realizar los diagramas de cuerpo libre</li>
+            </ol>
+        </div>
+
+
+        <div class="main">
+            <h2>Ejemplo:</h2>
+            <P>un bloque de 10[kg] se libera desde el punto A. La pista tiene una friccion.
+                el bloque viaja por la pista , golpea a un resorte con 220[N/m] de constante de fuerza y
+                comprime el resorte 0.300[m] desde s posicion de equilibrio antes de llegar al reposo momentaneamente.
+                Determine el coeficiente de friccion cinetica entre el bloque y la superficie rugosa</p>
+            <div class="imagenes">
+                <img src="images/problema.png">
+            </div>
+
+            <h3>Solucion:</h3>
+            <div class="imagenes">
+                <p>Por conservaci on de la energa mecanica tendremos que la energa potencial gravitatoria en
+                    el punto A, mas el traba jo producido por la fuerza de rozamiento entre B y C sera igual a la energa
+                    potencial elastica adquirida por el muelle en D: VA + WR = VD, por lo tanto</p>
+                <img src="images/formula1.png">
+                <p>si despejo el coeficiente de rozamiento me queda:</p>
+                <img src="images/formula2.png">
+            </div>
+        </div>
+    </div>
+
+
+    <div style="width: 100%">
+        <p style="font-size: 150%"> Ahora , ya estas listo para resolver tu problema de energia</p>
+        <h3>Suerte!!</h3>
+    </div>
+
+    <div id="boton" onclick="divLogin()">
+        Realizar Calculos
+    </div>
+
+    <div id="caja">
+
+        <div class="resultado" id="Resultado">
+            <fieldset>
+                <legend><h3>OPCIONES PARA CALCULAR</h3></legend>
+
+                <ul class="opcion">
+                    <div class="botones" >
+                        <li>
+                            <div id="boton1" onclick="VerOpcion1()">
+                            Calcular el Coeficiente de Rozamiento
+                            </div>
+                            <div class="caja1" id="Caja1" style=" height:0px">
+                                <div class="datos" id="Resultado1">
+                                    <br>Masa del objeto<br> <input type="text" id="txMasa" name="masa" onchange="comprobarNum(this.value);">
+                                    <label>
+                                        <select  id="uniMasa" name="unidadesMasa" >
+                                            <option value="miligramo">miligramo</option>
+                                            <option value="gramo">gramo</option>
+                                            <option value="kilogramo" >kilogramo</option>
+                                        </select>
+                                    </label><br>
+                                    <br>Contante del resorte<br><input type="text" id="txK"name="k" onchange="comprobarNum(this.value);">
+                                    <label> </label><br>
+                                    Compresion del Resorte<br> <input type="text" id="txX"name="x" onchange="comprobarNum(this.value);">
+                                    <label>
+                                        <select name="unidadesDistancia">
+                                            <option value="milimetro">milimetro</option>
+                                            <option value="centimetro">centimetro</option>
+                                            <option value="metro">metro</option>
+                                            <option value="kilometro">kilometro</option>
+                                        </select>
+                                    </label>
+                                    <br><br>
+                                    Altura punto A<br> <input type="text" id="txAltura"name="altura" onchange="comprobarNum(this.value); ">
+                                    <label>
+                                        <select name="unidadesAltura">
+                                            <option value="milimetro">milimetro</option>
+                                            <option value="centimetro">centimetro</option>
+                                            <option value="metro">metro</option>
+                                            <option value="kilometro">kilometro</option>
+                                        </select>
+                                    </label><br><br>
+                                    Distancia B-C<br> <input type="text"ID="txSegmento" name="segmento" onchange="comprobarNum(this.value);">
+                                    <label>
+                                        <select name="unidadesDistancia">
+                                            <option value="milimetro">milimetro</option>
+                                            <option value="centimetro">centimetro</option>
+                                            <option value="metro">metro</option>
+                                            <option value="kilometro">kilometro</option>
+                                        </select>
+                                    </label>
+                                    <br><div id="boton2"  onclick="CCR(txMasa.value,txAltura.value,txX.value,txK.value,txSegmento.value)">
+
+                                    Calcular
+                                </div><br>
+                                    res<br> <input type="text" ID="txRes" name="segmento" disabled>
+
+                                </div>
+								<canvas ID="micanvas" class="canvas"></canvas>
+                            </div>
+                        </li>
+
+                    </div>
+                </ul>
+
+            </fieldset>
+
+
+
+        </div>
+    </div>
+
+
+</body>
+</html>
