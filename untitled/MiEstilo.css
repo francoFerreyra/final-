@@ -78,10 +78,11 @@ h1{
     padding: 5px;
 }
 .canvas{
-	margin: 0 -478px 0 auto;
-    width: 100%;
+	margin: 0 200px 0 auto;
+    width: 300px;
     float: right;
     font-size:20px
+
 	
 }
 
@@ -90,8 +91,8 @@ h1{
     width: 100%;
     margin: auto;
     height: 0px;
-    /* background: rgba(255, 175, 24, 1);*/
-    box-shadow: 10px 10px 3px #D8D8D8;
+     background: rgba(242, 246, 210,0.5);
+    /*box-shadow: 10px 10px 3px #D8D8D8;*/
     transition: height .4s;
 }
 
@@ -123,8 +124,7 @@ h1{
     width: 100%;
     margin: 0 -220px  0 auto;
     height: 0px;
-    /* background: rgba(255, 175, 24, 1);*/
-    box-shadow: 10px 10px 3px #D8D8D8;
+    /*background: rgba(237, 243, 227,0.5);*/
     transition: height .4s;
     padding-left: 50px;
 

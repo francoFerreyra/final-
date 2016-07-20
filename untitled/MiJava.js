@@ -45,11 +45,14 @@ function VerOpcion1() {
     if (clic == 1) {
         document.getElementById("Caja1").style.height = "500px";
         document.getElementById("Resultado1").style.display = 'block';
-
+        document.getElementById("cuadro").style.height=" 750px";
+        document.getElementById("miCanvas").style.display='block';
         clic = clic + 1;
     } else {
         document.getElementById("Caja1").style.height = "0px";
         document.getElementById("Resultado1").style.display = 'none';
+        document.getElementById("cuadro").style.height="150px";
+        document.getElementById("miCanvas").style.display='none';
 
         clic = 1;
     }
@@ -77,114 +80,137 @@ function CCR(vmasa,valtura,vx,kx,vsegmento)
    
 	
 	document.getElementById("txRes").value =mu;
-    inciar_animacion();
+    dibujar();
 }
 
-function iniciar_animacion()
+
+var t =0;
+
+var loopTimer;
+function animar()
 {
-	
-}
+    var x=0;
+    var y=0;
 
-function CalculoCoeRozamiento (masa,altura,x,segmento ) {
-    alert (masa, altura,segmento,x);
-    var mu = ((masa * 9.8 * altura ) - ( 0.5 * k * (x ^2))) / ( masa * 9.8 * segmento);
-    alert (" el coeficiente de rozamiento es ");
-    return mu;
+    if(t<=60)
+    {
+        y= (t*90)/60;
+        x=50;
 
+    }
+
+    if(t>60 && t<=120)
+    {
+        y=Math.sin(Math.PI-(t-60)*Math.PI/120)*35;
+        x=Math.cos(Math.PI-(t-60)*Math.PI/120)*35;
+        x+=85;
+        y+=90;
+    }
+    if(t>120 && t<=180)
+    {
+        y=195-70;
+        x=(((t-120)*90)/60)+85;
+
+    }
+    if(t>180 && t<=400)
+    {
+        y=195-70;
+        x=(((t-180)*205)/220)+175;
+    }
+    if(t>400 && t<=600)
+    {
+        y=195-70;
+        x=380-(((t-400)*205)/220);
+    }
+    var canvas = document.getElementById('miCanvas');
+    canvas.width = canvas.width;
+    dibujarCanvas();
+    var contexto = canvas.getContext('2d');
+    contexto.save();
+    contexto.fillStyle = "rgba(0,200,0,1)";
+    contexto.fillRect(x,y,70,70);
+    contexto.restore();
+
+    t++;
+    if(t>600)
+        clearInterval(loopTimer);
 }
-function CalculoDesplazamiento ( masa,segmento,altura,mu,k) {
-    alert (masa,segmento,mu,k);
-    var x = sqrt( ((masa *9.8*altura)-(mu*masa*9.8*segmento))*(2/k));
-    return x;
+function dibujar()
+{
+    t=0;
+    loopTimer = setInterval(animar,1000/60);
 }
-/*
-function CalculoConstanteResorte (masa,mu,segmento,x,altura) {
-    alert (masa,mu,segmento,x,altura);
-    var k= ( ( (masa*9.8*altura)-(mu*masa*9.8*segmento)) * ( 2/ x^2));
-    return k;
-}
-function CalculoSegmentoRugozo () {
-    alert (masa,mu,segmento,x,altura);
-    var k= ( ( (masa*9.8*altura)-(mu*masa*9.8*segmento)) * ( 2/ x^2));
-    return k;
-}
-function CalculoFuerzaDisipada () {
-    alert (masa,mu,segmento,x,altura);
-    var k= ( ( (masa*9.8*altura)-(mu*masa*9.8*segmento)) * ( 2/ x^2));
-    return k;
-}
-function CalculoAltura () {
-    alert (masa,mu,segmento,x,altura);
-    var k= ( ( (masa*9.8*altura)-(mu*masa*9.8*segmento)) * ( 2/ x^2));
-    return k;
-}
-*/
-function dibujarCanvas(){
+function dibujarCanvas()
+{
     var canvas = document.getElementById('miCanvas');
     var contexto = canvas.getContext('2d');
     // b. Forma cerrada con  relleno
     contexto.beginPath();
-    contexto.moveTo(720,330);
-    contexto.lineTo(720,260);
-    contexto.lineTo(790,260);
-    contexto.lineTo(790,330);
-    contexto.fillStyle = '#009933'
-    contexto.fill();
-    contexto.beginPath();
-    contexto.moveTo(230,40);
-    contexto.lineTo(230,300);
-    contexto.strokeStyle = '#0000CC'
+    contexto.moveTo(50,40);
+    contexto.lineTo(50,140);
+    contexto.strokeStyle = '#0000CC';
     contexto.linewidth = 15;
     contexto.stroke();
     contexto.beginPath();
-    contexto.moveTo(230,300);
-    contexto.lineTo(250,340);
-    contexto.lineTo(290,340);
-    contexto.strokeStyle = '#0000CC'
+    contexto.moveTo(50,140);
+    contexto.lineTo(50,160);
+    contexto.quadraticCurveTo(45,200,80,195);
+    contexto.strokeStyle = '#0000CC';
     contexto.linewidth = 15;
     contexto.stroke();
     contexto.beginPath();
-    contexto.moveTo(290,340);
-    contexto.lineTo(700,340);
-    contexto.strokeStyle = '#0000CC'
+    contexto.moveTo(80,195);
+    contexto.lineTo(230,195);
+    contexto.strokeStyle = '#0000CC';
     contexto.linewidth = 15;
     contexto.stroke();
     contexto.beginPath();
-    contexto.moveTo(700,340);
-    contexto.lineTo(715,335);
-    contexto.lineTo(720,340);
-    contexto.lineTo(730,335);
-    contexto.lineTo(740,340);
-    contexto.lineTo(758,335);
-    contexto.lineTo(760,340);
-    contexto.lineTo(778,335);
-    contexto.lineTo(788,340);
-    contexto.lineTo(800,335);
-    contexto.lineTo(810,340);
-    contexto.lineTo(820,335);
-    contexto.lineTo(830,340);
-    contexto.lineTo(840,335);
-    contexto.lineTo(850,340);
-    contexto.strokeStyle = '#FF0033'
-    contexto.stroke();
-    contexto.beginPath();
-    contexto.moveTo(850,340);
-    contexto.lineTo(1000,340);
-    contexto.moveTo(1000,340);
-    contexto.lineTo(1000,250);
-    contexto.strokeStyle = '#0000CC'
+    contexto.moveTo(230,195);
+    contexto.lineTo(280,195);
+    contexto.strokeStyle = '#0000CC';
     contexto.linewidth = 15;
     contexto.stroke();
     contexto.beginPath();
-    contexto.moveTo(1000,290);
-    contexto.lineTo(990,290);
-    contexto.lineTo(980,300);
-    contexto.lineTo(970,290);
-    contexto.lineTo(960,300);
-    contexto.lineTo(950,290);
-    contexto.lineTo(940,300);
-    contexto.lineTo(930,290);
-    contexto.lineTo(920,300);
-    contexto.strokeStyle = '#0000CC'
+    contexto.moveTo(280,195);
+    contexto.lineTo(290,190);
+    contexto.lineTo(300,195);
+    contexto.lineTo(310,190);
+    contexto.lineTo(320,195);
+    contexto.lineTo(330,190);
+    contexto.lineTo(340,195);
+    contexto.lineTo(350,190);
+    contexto.lineTo(360,195);
+    contexto.lineTo(370,190);
+    contexto.lineTo(380,195);
+    contexto.strokeStyle = '#ff0000';
+    contexto.linewidth = 30;
     contexto.stroke();
+    contexto.beginPath();
+    contexto.moveTo(380,195);
+    contexto.lineTo(520,195);
+    contexto.strokeStyle = '#0000CC';
+    contexto.linewidth = 15;
+    contexto.stroke();
+    contexto.beginPath();
+    contexto.moveTo(520,195);
+    contexto.lineTo(520,105);
+    contexto.strokeStyle = '#0000CC';
+    contexto.linewidth = 15;
+    contexto.stroke();
+    contexto.beginPath();
+    contexto.moveTo(520,145);
+    contexto.lineTo(510,140);
+    contexto.lineTo(500,145);
+    contexto.lineTo(490,140);
+    contexto.lineTo(480,145);
+    contexto.lineTo(470,140);
+    contexto.lineTo(460,145);
+    contexto.lineTo(450,140);
+    contexto.lineTo(450,125);
+    contexto.lineTo(450,155);
+    contexto.strokeStyle = '#ff0000';
+    contexto.linewidth = 15;
+    contexto.stroke();
+
 }
+	
