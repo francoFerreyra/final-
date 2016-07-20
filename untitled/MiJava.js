@@ -6,9 +6,12 @@ var valor;
 var unidad;
 var valorIngreso;
 
-function comprobarNum(valorIngreso) {
-    if (isNaN(valorIngreso)) {
+function comprobarNum(ide) {
+    var dato = document.getElementById(ide).value;
+    if (isNaN(dato)) {
         alert("Valor ingresado no numerico, ingresar de nuevo.")
+        document.getElementById(ide).value="";
+        document.getElementById(ide).focus();
     }
 }
 function convertirUnidades (valor, unidad){
@@ -58,12 +61,7 @@ function VerOpcion1() {
 function CCR(vmasa,valtura,vx,kx,vsegmento)
 {
     var  uM, uA,uS,uX,mu;
-//    var vmasa,valtura,vsegmento,vx,kx,mu;
-//    kx=parseFloat(document.getElementById("txk").value);
-//    vmasa = parseFloat(document.getElementById("txmasa").value);
-//    valtura= parseFloat(document.getElementById("txaltura").value);
-//    vsegmento  = parseFloat(document.getElementById("txsegmento").value);
-//    vx =parseFloat( document.getElementById("txx").value);
+
 	var unidmasa = document.getElementById("uniMasa").value;
 	
     uM=convertirUnidades(vmasa,"unidmasa");
@@ -71,12 +69,12 @@ function CCR(vmasa,valtura,vx,kx,vsegmento)
     uS=convertirUnidades(vsegmento,"metro");
     uX=convertirUnidades(vx,"metro");
 
-	alert(unidmasa);
-    alert("valores ingresados:" +"Masa: "+vmasa+"  Altura:  "+valtura+"  X:" +vx+" K"+ kx+"  Segmento: "+ vsegmento);
+
+    alert("valores ingresados:" +"Masa: "+vmasa+"  Altura:  "+valtura+"  Compresion del resorte:" +vx+" Constante del resorte"+ kx+"  Segmento: "+ vsegmento);
     
     mu = ((uM * 9.8 * uA ) - ( 0.5 * kx * (uX ^ 2))) / ( uM * 9.8 * uS);
 
-    alert("el coeficiente de rozamiento es:  "+mu);
+   
 	
 	document.getElementById("txRes").value =mu;
     inciar_animacion();

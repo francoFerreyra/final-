@@ -71,7 +71,7 @@
                             </div>
                             <div class="caja1" id="Caja1" style=" height:0px">
                                 <div class="datos" id="Resultado1">
-                                    <br>Masa del objeto<br> <input type="text" id="txMasa" name="masa" onchange="comprobarNum(this.value);">
+                                    <br>Masa del objeto<br> <input type="text" id="txMasa" name="masa" onchange="comprobarNum(this.id);">
                                     <label>
                                         <select  id="uniMasa" name="unidadesMasa" >
                                             <option value="miligramo">miligramo</option>
@@ -79,9 +79,9 @@
                                             <option value="kilogramo" >kilogramo</option>
                                         </select>
                                     </label><br>
-                                    <br>Contante del resorte<br><input type="text" id="txK"name="k" onchange="comprobarNum(this.value);">
+                                    <br>Contante del resorte<br><input type="text" id="txK"name="k" onchange="comprobarNum(this.id);">
                                     <label> </label><br>
-                                    Compresion del Resorte<br> <input type="text" id="txX"name="x" onchange="comprobarNum(this.value);">
+                                    Compresion del Resorte<br> <input type="text" id="txX"name="x" onchange="comprobarNum(this.id);">
                                     <label>
                                         <select name="unidadesDistancia">
                                             <option value="milimetro">milimetro</option>
@@ -91,7 +91,7 @@
                                         </select>
                                     </label>
                                     <br><br>
-                                    Altura punto A<br> <input type="text" id="txAltura"name="altura" onchange="comprobarNum(this.value); ">
+                                    Altura punto A<br> <input type="text" id="txAltura"name="altura" onchange="comprobarNum(this.id); ">
                                     <label>
                                         <select name="unidadesAltura">
                                             <option value="milimetro">milimetro</option>
@@ -100,7 +100,7 @@
                                             <option value="kilometro">kilometro</option>
                                         </select>
                                     </label><br><br>
-                                    Distancia B-C<br> <input type="text"ID="txSegmento" name="segmento" onchange="comprobarNum(this.value);">
+                                    Distancia B-C<br> <input type="text"ID="txSegmento" name="segmento" onchange="comprobarNum(this.id);">
                                     <label>
                                         <select name="unidadesDistancia">
                                             <option value="milimetro">milimetro</option>
@@ -113,7 +113,7 @@
 
                                     Calcular
                                 </div><br>
-                                    res<br> <input type="text" ID="txRes" name="segmento" disabled>
+                                    El coeficiente de rosamiento es <br> <input type="text" ID="txRes" name="segmento" disabled>
 
                                 </div>
 								<canvas ID="micanvas" class="canvas"></canvas>
