@@ -58,7 +58,6 @@ function VerOpcion1() {
     }
 }
 
-
 /* FUNCIONES PARA CALCULOS */
 
 function CCR(vmasa,valtura,vx,kx,vsegmento)
